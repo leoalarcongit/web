@@ -42,7 +42,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link href="/" className="z-50">
           <div className="relative h-10 w-32">
-            <Image src="/placeholder.svg?height=40&width=128" alt="Logo" fill className="object-contain" priority />
+            <Image src="/logo_redondo.webp?height=40&width=128" alt="Logo" fill className="object-contain" priority />
           </div>
         </Link>
 

@@ -15,7 +15,27 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Portafolio | Fotografía & Videografía",
   description: "Portafolio profesional de fotografía, videografía y edición",
-    generator: 'v0.dev'
+  generator: 'v0.dev',
+  icons: {
+    icon: [
+      {
+        url: '/logo_redondo.webp',
+        sizes: 'any',
+      },
+      {
+        url: '/icon.png',
+        type: 'image/png',
+        sizes: '32x32',
+      },
+    ],
+    apple: [
+      {
+        url: '/apple-icon.png',
+        sizes: '180x180',
+        type: 'image/png',
+      },
+    ],
+  },
 }
 
 export default function RootLayout({

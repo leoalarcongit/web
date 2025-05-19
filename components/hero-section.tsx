@@ -76,10 +76,10 @@ const HeroSection = () => {
             Capturando momentos, <span className="font-bold">creando historias</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto">
+          {/* <p className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto">
             Fotografía y videografía profesional para preservar tus momentos más importantes con un estilo único y
             atemporal.
-          </p>
+          </p> */}
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-white text-black hover:bg-white/90" asChild>
@@ -92,13 +92,13 @@ const HeroSection = () => {
         </div>
 
         {/* Scroll Down Indicator */}
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-4 transform -translate-x-1/2 animate-bounce">
           <button
             onClick={scrollToPortfolio}
             aria-label="Desplazarse hacia abajo"
             className="flex flex-col items-center"
           >
-            <span className="text-sm mb-2 text-white/80">Descubrir</span>
+            <span className="text-sm mb-1 text-white/80">Descubrir</span>
             <ChevronDown className="h-6 w-6" />
           </button>
         </div>
