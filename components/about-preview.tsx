@@ -9,7 +9,7 @@ const AboutPreview = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="relative aspect-square overflow-hidden rounded-lg">
             <Image
-              src="/placeholder.svg?height=800&width=800"
+              src="/leonardo.webp?height=800&width=800"
               alt="Fotógrafo profesional"
               fill
               className="object-cover"

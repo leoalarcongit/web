@@ -29,22 +29,42 @@ export default function ContactPage() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
 
-    toast({
-      title: "Mensaje enviado",
-      description: "Gracias por contactarme. Te responderé lo antes posible.",
-    })
+      const data = await response.json()
 
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    })
+      if (!response.ok) {
+        throw new Error(data.details || data.error || 'Failed to send message')
+      }
 
-    setIsSubmitting(false)
+      toast({
+        title: "Mensaje enviado",
+        description: "Gracias por contactarme. Te responderé lo antes posible.",
+      })
+
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      })
+    } catch (error) {
+      console.error('Form submission error:', error)
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.",
+        variant: "destructive",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (

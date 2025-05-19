@@ -92,7 +92,7 @@ export default function AboutPage() {
 
           <div className="relative aspect-[3/4] overflow-hidden rounded-lg">
             <Image
-              src="/placeholder.svg?height=1200&width=900"
+              src="/leonardo.webp?height=1200&width=900"
               alt="Fotógrafo profesional"
               fill
               className="object-cover"
