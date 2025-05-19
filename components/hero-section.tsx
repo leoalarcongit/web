@@ -64,7 +64,7 @@ const HeroSection = () => {
         <div className="max-w-3xl mx-auto">
           <div className="mb-8">
             <Image
-              src="/placeholder.svg?height=120&width=300"
+              src="/logo-hero.webp?height=120&width=300"
               alt="Logo"
               width={300}
               height={120}
