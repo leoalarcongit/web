@@ -10,15 +10,15 @@ const HeroSection = () => {
 
   const slides = [
     {
-      image: "/placeholder.svg?height=1080&width=1920",
+      image: "/hero-1.webp?height=1080&width=1920",
       alt: "Fotografía artística de paisaje",
     },
     {
-      image: "/placeholder.svg?height=1080&width=1920",
+      image: "/hero-2.webp?height=1080&width=1920",
       alt: "Retrato profesional en estudio",
     },
     {
-      image: "/placeholder.svg?height=1080&width=1920",
+      image: "/hero-3.webp?height=1080&width=1920",
       alt: "Escena de videografía",
     },
   ]
