@@ -9,6 +9,16 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { useToast } from "@/hooks/use-toast"
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog"
 
 export default function ContactPage() {
   const { toast } = useToast()
@@ -19,6 +29,7 @@ export default function ContactPage() {
     message: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [showConfirmDialog, setShowConfirmDialog] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -44,11 +55,10 @@ export default function ContactPage() {
         throw new Error(data.details || data.error || 'Failed to send message')
       }
 
-      toast({
-        title: "Mensaje enviado",
-        description: "Gracias por contactarme. Te responderé lo antes posible.",
-      })
-
+      // Show confirmation dialog after successful submission
+      setShowConfirmDialog(true)
+      
+      // Reset form
       setFormData({
         name: "",
         email: "",
@@ -58,13 +68,18 @@ export default function ContactPage() {
     } catch (error) {
       console.error('Form submission error:', error)
       toast({
-        title: "Error",
+        title: "Error al enviar el mensaje",
         description: error instanceof Error ? error.message : "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.",
         variant: "destructive",
+        duration: 5000,
       })
     } finally {
       setIsSubmitting(false)
     }
+  }
+
+  const handleCloseConfirmation = () => {
+    setShowConfirmDialog(false)
   }
 
   return (
@@ -248,6 +263,20 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+
+      <AlertDialog open={showConfirmDialog} onOpenChange={setShowConfirmDialog}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>¡Mensaje enviado con éxito!</AlertDialogTitle>
+            <AlertDialogDescription>
+              Gracias por contactarme. Te responderé lo antes posible.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogAction onClick={handleCloseConfirmation}>Cerrar</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   )
 }

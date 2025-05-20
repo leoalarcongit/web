@@ -1,0 +1,35 @@
+[33mcommit d97962e6765896b12fd84af29df832908b6b88cf[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Pablo Mariano <pablomariano@gmail.com>
+Date:   Tue May 20 09:24:03 2025 -0400
+
+    Add resend package and update pnpm lockfile
+
+[33mcommit d708128b032bb8368c5c9caecb3454771c22e055[m
+Author: Pablo Mariano <pablomariano@gmail.com>
+Date:   Mon May 19 19:05:29 2025 -0400
+
+    Added photos of Leo
+
+[33mcommit 7238055ec64180c2f36733c419a1323f0bfd1eb6[m
+Author: Pablo Mariano <pablomariano@gmail.com>
+Date:   Mon May 19 16:22:57 2025 -0400
+
+    Added logo, ico and fixed align of ver más button
+
+[33mcommit ae630bf4b4becb03e67864d5f790fddc74ca8af0[m
+Author: Pablo Mariano <pablomariano@gmail.com>
+Date:   Mon May 19 15:37:11 2025 -0400
+
+    Added hero images and logo
+
+[33mcommit a6970fd200a425affe015451766262e8bcededd8[m
+Author: Pablo Mariano <pablomariano@gmail.com>
+Date:   Mon May 19 15:21:37 2025 -0400
+
+    Update dependencies and change hero section logo source
+
+[33mcommit aee4e8ef91118d483260c42d5bbf3e21725a95f6[m
+Author: Pablo Mariano <pablomariano@gmail.com>
+Date:   Tue May 6 21:14:50 2025 -0400
+
+    Initial commit

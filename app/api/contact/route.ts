@@ -8,15 +8,15 @@ export async function POST(req: Request) {
     
     if (!process.env.RESEND_API_KEY) {
       console.error('RESEND_API_KEY is not defined');
-      return Response.json({ error: 'Email service not configured' }, { status: 500 });
+      return Response.json({ error: 'Servicio de email no configurado' }, { status: 500 });
     }
 
     if (!process.env.CONTACT_EMAIL) {
       console.error('CONTACT_EMAIL is not defined');
-      return Response.json({ error: 'Contact email not configured' }, { status: 500 });
+      return Response.json({ error: 'Email de contacto no configurado' }, { status: 500 });
     }
 
-    console.log('Attempting to send email with data:', {
+    console.log('Intentando enviar email con los siguientes datos:', {
       to: process.env.CONTACT_EMAIL,
       subject,
       name,
@@ -26,13 +26,13 @@ export async function POST(req: Request) {
     const data = await resend.emails.send({
       from: 'Portfolio Contact <onboarding@resend.dev>',
       to: process.env.CONTACT_EMAIL,
-      subject: `New Contact Form: ${subject}`,
+      subject: `Nuevo mensaje de contacto: ${subject}`,
       html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
+        <h2>Nuevo mensaje de contacto</h2>
+        <p><strong>Nombre:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Subject:</strong> ${subject}</p>
-        <p><strong>Message:</strong></p>
+        <p><strong>Asunto:</strong> ${subject}</p>
+        <p><strong>Mensaje:</strong></p>
         <p>${message.replace(/\n/g, '<br>')}</p>
       `,
     });
