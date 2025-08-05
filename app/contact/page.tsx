@@ -105,8 +105,8 @@ export default function ContactPage() {
                   <Mail className="h-5 w-5 text-white/60 mt-1 mr-3" />
                   <div>
                     <p className="font-medium mb-1">Email</p>
-                    <a href="mailto:info@example.com" className="text-white/80 hover:text-white transition-colors">
-                      info@example.com
+                    <a href="mailto:leonardo.alarcon@gmail.com" className="text-white/80 hover:text-white transition-colors">
+                      leonardo.alarcon@gmail.com 
                     </a>
                   </div>
                 </div>
@@ -115,7 +115,7 @@ export default function ContactPage() {
                   <Phone className="h-5 w-5 text-white/60 mt-1 mr-3" />
                   <div>
                     <p className="font-medium mb-1">Teléfono</p>
-                    <a href="tel:+123456789" className="text-white/80 hover:text-white transition-colors">
+                    <a href="tel:+" className="text-white/80 hover:text-white transition-colors">
                       +1 (234) 567-89
                     </a>
                   </div>
