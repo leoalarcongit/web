@@ -23,33 +23,33 @@ const PortfolioPreview = () => {
 
   const photos = [
     {
-      src: "/placeholder.svg?height=800&width=1200",
-      alt: "Retrato artístico en blanco y negro",
+      src: "/img/landing/foto_1.jpg",
+      alt: "Fotografía Profesional 1",
       category: "retratos",
     },
     {
-      src: "/placeholder.svg?height=800&width=1200",
-      alt: "Paisaje al atardecer",
+      src: "/img/landing/foto_2.jpg",
+      alt: "Fotografía Profesional 2",
       category: "paisajes",
     },
     {
-      src: "/placeholder.svg?height=800&width=1200",
-      alt: "Fotografía de boda",
+      src: "/img/landing/foto_3.jpg",
+      alt: "Fotografía Profesional 3",
       category: "bodas",
     },
     {
-      src: "/placeholder.svg?height=800&width=1200",
-      alt: "Retrato corporativo",
+      src: "/img/landing/foto_4.jpg",
+      alt: "Fotografía Profesional 4",
       category: "retratos",
     },
     {
-      src: "/placeholder.svg?height=800&width=1200",
-      alt: "Paisaje montañoso",
+      src: "/img/landing/foto_5.jpg",
+      alt: "Fotografía Profesional 5",
       category: "paisajes",
     },
     {
-      src: "/placeholder.svg?height=800&width=1200",
-      alt: "Momento especial de boda",
+      src: "/img/landing/foto_6.jpg",
+      alt: "Fotografía Profesional 6",
       category: "bodas",
     },
   ]
