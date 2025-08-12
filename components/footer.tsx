@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Instagram, Youtube, Linkedin, Mail, Phone } from "lucide-react"
+import { Instagram, Youtube, Linkedin, Mail, Phone, Send } from "lucide-react"
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="md:col-span-1">
             <Link href="/">
               <div className="relative h-10 w-32 mb-4">
-                <Image src="/placeholder.svg?height=40&width=128" alt="Logo" fill className="object-contain" />
+                <Image src="/logo_redondo.webp?height=40&width=128" alt="Logo" fill className="object-contain" />
               </div>
             </Link>
             <p className="text-white/60 text-sm mb-6">
@@ -116,14 +116,14 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-center">
                 <Mail size={16} className="text-white/60 mr-2" />
-                <a href="mailto:info@example.com" className="text-white/60 hover:text-white transition-colors text-sm">
-                  info@example.com
+                <a href="mailto:leonardo.alarcon@gmail.cl" className="text-white/60 hover:text-white transition-colors text-sm">
+                  leonardo.alarcon@gmail.cl
                 </a>
               </li>
               <li className="flex items-center">
-                <Phone size={16} className="text-white/60 mr-2" />
-                <a href="tel:+123456789" className="text-white/60 hover:text-white transition-colors text-sm">
-                  +1 (234) 567-89
+                <Send size={16} className="text-white/60 mr-2" />
+                <a href="/contact" className="text-white/60 hover:text-white transition-colors text-sm">
+                  Escríbeme
                 </a>
               </li>
             </ul>
@@ -132,7 +132,7 @@ const Footer = () => {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-white/60 text-sm mb-4 md:mb-0">
-            &copy; {currentYear} Nombre del Fotógrafo. Todos los derechos reservados.
+            &copy; {currentYear} Leonardo Alarcón. Todos los derechos reservados.
           </p>
           <div className="flex space-x-6">
             <Link href="/privacy-policy" className="text-white/60 hover:text-white transition-colors text-sm">

@@ -85,38 +85,40 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         <div
           className={cn(
-            "fixed inset-0 bg-black flex flex-col justify-center items-center transition-all duration-300 md:hidden",
+            "fixed inset-0 bg-black/95 backdrop-blur-sm transition-all duration-300 md:hidden z-40",
             isOpen ? "opacity-100 visible" : "opacity-0 invisible",
           )}
         >
-          <nav className="flex flex-col items-center space-y-8">
-            <Link
-              href="/portfolio"
-              className="text-white/80 hover:text-white transition-colors text-xl uppercase tracking-wider"
-              onClick={closeMenu}
-            >
-              Portafolio
-            </Link>
-            <Link
-              href="/services"
-              className="text-white/80 hover:text-white transition-colors text-xl uppercase tracking-wider"
-              onClick={closeMenu}
-            >
-              Servicios
-            </Link>
-            <Link
-              href="/about"
-              className="text-white/80 hover:text-white transition-colors text-xl uppercase tracking-wider"
-              onClick={closeMenu}
-            >
-              Sobre mí
-            </Link>
-            <Link href="/contact" onClick={closeMenu}>
-              <Button variant="outline" className="border-white/20 hover:border-white text-xl uppercase tracking-wider">
-                Contacto
-              </Button>
-            </Link>
-          </nav>
+          <div className="flex flex-col justify-center items-center min-h-screen px-4">
+            <nav className="flex flex-col items-center space-y-8">
+              <Link
+                href="/portfolio"
+                className="text-white/80 hover:text-white transition-colors text-xl uppercase tracking-wider"
+                onClick={closeMenu}
+              >
+                Portafolio
+              </Link>
+              <Link
+                href="/services"
+                className="text-white/80 hover:text-white transition-colors text-xl uppercase tracking-wider"
+                onClick={closeMenu}
+              >
+                Servicios
+              </Link>
+              <Link
+                href="/about"
+                className="text-white/80 hover:text-white transition-colors text-xl uppercase tracking-wider"
+                onClick={closeMenu}
+              >
+                Sobre mí
+              </Link>
+              <Link href="/contact" onClick={closeMenu}>
+                <Button variant="outline" className="border-white/20 hover:border-white text-xl uppercase tracking-wider">
+                  Contacto
+                </Button>
+              </Link>
+            </nav>
+          </div>
         </div>
       </div>
     </header>
