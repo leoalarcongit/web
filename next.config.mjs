@@ -7,7 +7,8 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    unoptimized: false, // Habilitar optimización para Cloudinary
+    domains: ['res.cloudinary.com'], // Permitir imágenes de Cloudinary
   },
   transpilePackages: ['resend'],
 }
