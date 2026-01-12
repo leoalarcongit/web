@@ -61,6 +61,12 @@ const Navbar = () => {
             Servicios
           </Link>
           <Link
+            href="/boda"
+            className="text-white/80 hover:text-white transition-colors text-sm uppercase tracking-wider"
+          >
+            Galería Boda
+          </Link>
+          <Link
             href="/about"
             className="text-white/80 hover:text-white transition-colors text-sm uppercase tracking-wider"
           >
@@ -104,6 +110,13 @@ const Navbar = () => {
                 onClick={closeMenu}
               >
                 Servicios
+              </Link>
+              <Link
+                href="/boda"
+                className="text-white/80 hover:text-white transition-colors text-xl uppercase tracking-wider"
+                onClick={closeMenu}
+              >
+                Galería Boda
               </Link>
               <Link
                 href="/about"

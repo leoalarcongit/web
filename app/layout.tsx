@@ -13,8 +13,8 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: "Nuestra Boda | Galería de Momentos Especiales",
-  description: "Galería multimedia de nuestra boda - Revive los momentos más especiales de nuestro día perfecto",
+  title: "Portafolio | Fotografía & Videografía",
+  description: "Portafolio profesional de fotografía, videografía y edición",
   generator: 'v0.dev',
   icons: {
     icon: [
