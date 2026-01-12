@@ -67,7 +67,7 @@ const Navbar = () => {
             Sobre mí
           </Link>
           <Link href="/contact">
-            <Button variant="outline" className="border-white/20 hover:border-white text-sm uppercase tracking-wider">
+            <Button variant="ghost" className="border border-white/20 hover:border-white hover:bg-white/10 hover:text-white text-white text-sm uppercase tracking-wider">
               Contacto
             </Button>
           </Link>
@@ -113,7 +113,7 @@ const Navbar = () => {
                 Sobre mí
               </Link>
               <Link href="/contact" onClick={closeMenu}>
-                <Button variant="outline" className="border-white/20 hover:border-white text-xl uppercase tracking-wider">
+                <Button variant="ghost" className="border border-white/20 hover:border-white hover:bg-white/10 hover:text-white text-white text-xl uppercase tracking-wider">
                   Contacto
                 </Button>
               </Link>

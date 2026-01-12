@@ -15,7 +15,7 @@ const ContactCta = () => {
           <Button size="lg" asChild>
             <Link href="/contact">Contactar ahora</Link>
           </Button>
-          <Button size="lg" variant="outline" className="border-white/20 hover:border-white" asChild>
+          <Button size="lg" variant="ghost" className="border border-white/20 hover:border-white hover:bg-white/10 hover:text-white text-white" asChild>
             <Link href="/portfolio">Ver portafolio</Link>
           </Button>
         </div>

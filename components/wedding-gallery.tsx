@@ -7,15 +7,50 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
-import { Download, Share2, Heart } from 'lucide-react';
+import { Download, Share2, Heart, Loader2 } from 'lucide-react';
 
 export default function WeddingGallery() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [selectedMoment, setSelectedMoment] = useState<WeddingMoment | null>(null);
+  const [visibleCount, setVisibleCount] = useState(50);
+  const [isLoading, setIsLoading] = useState(false);
 
   const filteredMoments = activeCategory === 'all' 
     ? weddingMoments 
     : weddingMoments.filter(moment => moment.category === activeCategory);
+
+  const visibleMoments = filteredMoments.slice(0, visibleCount);
+  const remainingCount = filteredMoments.length - visibleCount;
+
+  const handleLoadMore = async () => {
+    setIsLoading(true);
+    const currentHeight = document.documentElement.scrollHeight;
+    
+    // Simular un pequeño delay para mejor UX
+    await new Promise(resolve => setTimeout(resolve, 500));
+    setVisibleCount(prev => Math.min(prev + 50, filteredMoments.length));
+    
+    // Scroll suave a las nuevas fotos después de que se carguen
+    setTimeout(() => {
+      const newHeight = document.documentElement.scrollHeight;
+      const scrollTarget = currentHeight - 200; // Un poco antes de las nuevas fotos
+      window.scrollTo({ top: scrollTarget, behavior: 'smooth' });
+    }, 100);
+    
+    setIsLoading(false);
+  };
+
+  const handleCategoryChange = (categoryId: string) => {
+    setActiveCategory(categoryId);
+    setVisibleCount(50); // Reset visible count when changing category
+  };
+
+  const handleShowAll = async () => {
+    setIsLoading(true);
+    await new Promise(resolve => setTimeout(resolve, 800));
+    setVisibleCount(filteredMoments.length);
+    setIsLoading(false);
+  };
 
   const handleDownload = (moment: WeddingMoment) => {
     // Implementar descarga desde Cloudinary
@@ -44,7 +79,7 @@ export default function WeddingGallery() {
           <Button
             key={category.id}
             variant={activeCategory === category.id ? "default" : "outline"}
-            onClick={() => setActiveCategory(category.id)}
+            onClick={() => handleCategoryChange(category.id)}
             className="flex items-center gap-2"
           >
             <span>{category.icon}</span>
@@ -56,13 +91,13 @@ export default function WeddingGallery() {
       {/* Contador de momentos */}
       <div className="text-center">
         <p className="text-muted-foreground">
-          Mostrando {filteredMoments.length} momentos especiales
+          Mostrando {visibleMoments.length} de {filteredMoments.length} momentos especiales
         </p>
       </div>
 
       {/* Galería de momentos */}
       <div className="gallery-grid">
-        {filteredMoments.map((moment) => (
+        {visibleMoments.map((moment) => (
           <Card key={moment.id} className="group overflow-hidden hover:shadow-lg transition-shadow">
             <CardContent className="p-0">
               <Dialog>
@@ -196,6 +231,52 @@ export default function WeddingGallery() {
           <p className="text-muted-foreground text-lg">
             No hay momentos en esta categoría aún.
           </p>
+        </div>
+      )}
+
+      {/* Mostrar más botón */}
+      {remainingCount > 0 && (
+        <div className="text-center">
+          <Button 
+            variant="outline" 
+            size="lg"
+            onClick={handleLoadMore}
+            disabled={isLoading}
+            className="flex items-center gap-2"
+          >
+            {isLoading ? (
+              <>
+                <Loader2 className="w-4 h-4 animate-spin" />
+                Cargando...
+              </>
+            ) : (
+              <>Ver más fotos ({remainingCount} restantes)</>
+            )}
+          </Button>
+        </div>
+      )}
+
+      {/* Botón para mostrar todas */}
+      {remainingCount > 50 && !isLoading && (
+        <div className="text-center mt-4">
+          <Button 
+            variant="ghost" 
+            size="sm"
+            onClick={handleShowAll}
+            className="text-muted-foreground hover:text-foreground"
+          >
+            Mostrar todas las fotos ({filteredMoments.length} total)
+          </Button>
+        </div>
+      )}
+
+      {/* Indicador de carga global */}
+      {isLoading && (
+        <div className="text-center py-8">
+          <div className="flex items-center justify-center gap-2 text-muted-foreground">
+            <Loader2 className="w-5 h-5 animate-spin" />
+            <span>Cargando más momentos especiales...</span>
+          </div>
         </div>
       )}
     </div>

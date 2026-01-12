@@ -10,17 +10,17 @@ import { coupleInfo } from '@/lib/wedding-data';
 const heroSlides = [
   {
     id: 1,
-    cloudinaryId: 'wedding/hero/slide-1',
+    cloudinaryId: 'wedding/ceremonia/VandA-001',
     alt: 'Momento especial de la boda 1',
   },
   {
     id: 2,
-    cloudinaryId: 'wedding/hero/slide-2', 
+    cloudinaryId: 'wedding/ceremonia/VandA-010', 
     alt: 'Momento especial de la boda 2',
   },
   {
     id: 3,
-    cloudinaryId: 'wedding/hero/slide-3',
+    cloudinaryId: 'wedding/fiesta/VandA-380',
     alt: 'Momento especial de la boda 3',
   },
 ];
@@ -114,15 +114,15 @@ export default function WeddingHero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
-              className="bg-white text-black hover:bg-white/90 text-lg px-8 py-3"
+              className="bg-white text-black hover:bg-white/90 text-lg px-8 py-3 font-medium"
               onClick={scrollToGallery}
             >
               Ver Galería Completa
             </Button>
             <Button 
               size="lg" 
-              variant="outline" 
-              className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-3"
+              variant="ghost"
+              className="border border-white/30 text-white hover:bg-white/10 hover:text-white text-lg px-8 py-3 font-medium backdrop-blur-sm"
               onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
             >
               Descargar Fotos

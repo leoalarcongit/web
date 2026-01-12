@@ -1,12 +1,12 @@
-import WeddingHeroLocal from "@/components/wedding-hero-local"
-import WeddingGalleryLocal from "@/components/wedding-gallery-local"
+import WeddingHero from "@/components/wedding-hero"
+import WeddingGallery from "@/components/wedding-gallery"
 import CoupleStory from "@/components/couple-story"
 import ContactCta from "@/components/contact-cta"
 
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <WeddingHeroLocal />
+      <WeddingHero />
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
@@ -17,7 +17,7 @@ export default function Home() {
               Revive con nosotros cada momento mágico de nuestro día perfecto
             </p>
           </div>
-          <WeddingGalleryLocal />
+          <WeddingGallery />
         </div>
       </section>
       <CoupleStory />
