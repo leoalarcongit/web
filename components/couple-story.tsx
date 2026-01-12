@@ -1,10 +1,10 @@
 'use client';
 
-import { CldImage } from 'next-cloudinary';
+import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Heart, Calendar, MapPin, Users } from 'lucide-react';
-import { coupleInfo } from '@/lib/wedding-data';
+import { coupleInfo } from '@/lib/wedding-data-local';
 
 export default function CoupleStory() {
   return (
@@ -59,14 +59,12 @@ export default function CoupleStory() {
           <div className="space-y-4">
             <Card className="overflow-hidden">
               <CardContent className="p-0">
-                <CldImage
-                  src={`${coupleInfo.bride.photo}-${coupleInfo.groom.photo}`}
+                <Image
+                  src="/galeria/civil/V&A-005.webp"
                   alt="Foto de la pareja"
                   width={500}
                   height={400}
                   className="w-full h-80 object-cover"
-                  quality="auto"
-                  format="auto"
                 />
               </CardContent>
             </Card>
@@ -74,14 +72,12 @@ export default function CoupleStory() {
             <div className="grid grid-cols-2 gap-4">
               <Card className="overflow-hidden">
                 <CardContent className="p-0">
-                  <CldImage
+                  <Image
                     src={coupleInfo.bride.photo}
                     alt={coupleInfo.bride.name}
                     width={250}
                     height={200}
                     className="w-full h-32 object-cover"
-                    quality="auto"
-                    format="auto"
                   />
                   <div className="p-3 text-center">
                     <h3 className="font-semibold">{coupleInfo.bride.name}</h3>
@@ -92,14 +88,12 @@ export default function CoupleStory() {
               
               <Card className="overflow-hidden">
                 <CardContent className="p-0">
-                  <CldImage
+                  <Image
                     src={coupleInfo.groom.photo}
                     alt={coupleInfo.groom.name}
                     width={250}
                     height={200}
                     className="w-full h-32 object-cover"
-                    quality="auto"
-                    format="auto"
                   />
                   <div className="p-3 text-center">
                     <h3 className="font-semibold">{coupleInfo.groom.name}</h3>

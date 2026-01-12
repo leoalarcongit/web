@@ -1,31 +1,31 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { CldImage } from 'next-cloudinary';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, MapPin, Heart } from 'lucide-react';
-import { coupleInfo } from '@/lib/wedding-data';
+import { coupleInfo } from '@/lib/wedding-data-local';
 
 const heroSlides = [
   {
     id: 1,
-    cloudinaryId: 'wedding/hero/slide-1',
+    localPath: '/galeria/civil/V&A-001.webp',
     alt: 'Momento especial de la boda 1',
   },
   {
     id: 2,
-    cloudinaryId: 'wedding/hero/slide-2', 
+    localPath: '/galeria/civil/V&A-010.webp', 
     alt: 'Momento especial de la boda 2',
   },
   {
     id: 3,
-    cloudinaryId: 'wedding/hero/slide-3',
+    localPath: '/galeria/fiesta/V&A MATRIMONIO/V&A-380.webp',
     alt: 'Momento especial de la boda 3',
   },
 ];
 
-export default function WeddingHero() {
+export default function WeddingHeroLocal() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -61,14 +61,12 @@ export default function WeddingHero() {
             index === currentSlide ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <CldImage
-            src={slide.cloudinaryId}
+          <Image
+            src={slide.localPath}
             alt={slide.alt}
             fill
             className="object-cover"
             priority={index === 0}
-            quality="auto"
-            format="auto"
           />
           <div className="absolute inset-0 bg-black/40" />
         </div>
