@@ -113,6 +113,14 @@ export default function WeddingGallery() {
                         quality="auto"
                         format="auto"
                         loading="lazy"
+                        onError={(e) => {
+                          console.warn(`Failed to load image: ${moment.cloudinaryId}`);
+                          // Hide the broken image container
+                          const target = e.target as HTMLElement;
+                          if (target.parentElement) {
+                            target.parentElement.style.display = 'none';
+                          }
+                        }}
                       />
                     ) : (
                       <div className="relative">
@@ -179,6 +187,9 @@ export default function WeddingGallery() {
                         height={600}
                         className="w-full h-auto max-h-[60vh] object-contain"
                         quality="auto"
+                        onError={(e) => {
+                          console.warn(`Failed to load modal image: ${moment.cloudinaryId}`);
+                        }}
                         format="auto"
                       />
                     ) : (

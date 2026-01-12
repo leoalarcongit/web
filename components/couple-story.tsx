@@ -67,6 +67,9 @@ export default function CoupleStory() {
                   className="w-full h-80 object-cover"
                   quality="auto"
                   format="auto"
+                  onError={(e) => {
+                    console.warn(`Failed to load couple story image: wedding/ceremonia/VandA-005`);
+                  }}
                 />
               </CardContent>
             </Card>
@@ -82,6 +85,9 @@ export default function CoupleStory() {
                     className="w-full h-32 object-cover"
                     quality="auto"
                     format="auto"
+                    onError={(e) => {
+                      console.warn(`Failed to load bride photo: ${coupleInfo.bride.photo}`);
+                    }}
                   />
                   <div className="p-3 text-center">
                     <h3 className="font-semibold">{coupleInfo.bride.name}</h3>
@@ -100,6 +106,9 @@ export default function CoupleStory() {
                     className="w-full h-32 object-cover"
                     quality="auto"
                     format="auto"
+                    onError={(e) => {
+                      console.warn(`Failed to load groom photo: ${coupleInfo.groom.photo}`);
+                    }}
                   />
                   <div className="p-3 text-center">
                     <h3 className="font-semibold">{coupleInfo.groom.name}</h3>

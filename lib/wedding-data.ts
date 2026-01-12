@@ -50,12 +50,14 @@ const generateFiestaMoments = (): WeddingMoment[] => {
   ];
 
   fiestaNumbers.forEach((num, index) => {
+    // Format number with leading zeros to match the actual file names
+    const formattedNum = num.toString().padStart(3, '0');
     moments.push({
       id: `fiesta-${num}`,
       title: `Fiesta ${index + 1}`,
       category: 'fiesta',
       type: 'image',
-      cloudinaryId: `wedding/fiesta/VandA-${num}`,
+      cloudinaryId: `wedding/fiesta/VandA-${formattedNum}`,
       description: `Momento divertido de la fiesta`,
       featured: index < 5, // Primeras 5 como destacadas
     });
