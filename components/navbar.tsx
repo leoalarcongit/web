@@ -61,13 +61,19 @@ const Navbar = () => {
             Servicios
           </Link>
           <Link
+            href="/boda"
+            className="text-white/80 hover:text-white transition-colors text-sm uppercase tracking-wider"
+          >
+            Galería Boda
+          </Link>
+          <Link
             href="/about"
             className="text-white/80 hover:text-white transition-colors text-sm uppercase tracking-wider"
           >
             Sobre mí
           </Link>
           <Link href="/contact">
-            <Button variant="outline" className="border-white/20 hover:border-white text-sm uppercase tracking-wider">
+            <Button variant="ghost" className="border border-white/20 hover:border-white hover:bg-white/10 hover:text-white text-white text-sm uppercase tracking-wider">
               Contacto
             </Button>
           </Link>
@@ -106,6 +112,13 @@ const Navbar = () => {
                 Servicios
               </Link>
               <Link
+                href="/boda"
+                className="text-white/80 hover:text-white transition-colors text-xl uppercase tracking-wider"
+                onClick={closeMenu}
+              >
+                Galería Boda
+              </Link>
+              <Link
                 href="/about"
                 className="text-white/80 hover:text-white transition-colors text-xl uppercase tracking-wider"
                 onClick={closeMenu}
@@ -113,7 +126,7 @@ const Navbar = () => {
                 Sobre mí
               </Link>
               <Link href="/contact" onClick={closeMenu}>
-                <Button variant="outline" className="border-white/20 hover:border-white text-xl uppercase tracking-wider">
+                <Button variant="ghost" className="border border-white/20 hover:border-white hover:bg-white/10 hover:text-white text-white text-xl uppercase tracking-wider">
                   Contacto
                 </Button>
               </Link>

@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "optimize-images": "node scripts/optimize-images.js",
+    "test-cloudinary": "node scripts/test-cloudinary.js",
+    "upload-photos": "node scripts/upload-wedding-photos.js",
+    "debug-env": "node scripts/debug-env.js",
+    "test-upload": "node scripts/test-single-upload.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -39,13 +44,16 @@
     "@radix-ui/react-tooltip": "1.1.6",
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.1",
+    "cloudinary": "^2.8.0",
     "clsx": "^2.1.1",
     "cmdk": "1.0.4",
     "date-fns": "4.1.0",
+    "dotenv": "^17.2.3",
     "embla-carousel-react": "8.5.1",
     "input-otp": "1.4.1",
     "lucide-react": "^0.454.0",
-    "next": "15.2.4",
+    "next": "^16.1.1",
+    "next-cloudinary": "^6.17.5",
     "next-themes": "^0.4.4",
     "react": "^19",
     "react-day-picker": "8.10.1",
@@ -64,8 +72,12 @@
     "@types/node": "^22.15.19",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "chalk": "^5.3.0",
+    "glob": "^10.3.10",
     "postcss": "^8",
+    "sharp": "^0.33.2",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.8.3"
-  }
+  },
+  "packageManager": "pnpm@10.10.0+sha512.d615db246fe70f25dcfea6d8d73dee782ce23e2245e3c4f6f888249fb568149318637dca73c2c5c8ef2a4ca0d5657fb9567188bfab47f566d1ee6ce987815c39"
 }

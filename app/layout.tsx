@@ -1,16 +1,9 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Montserrat } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { ThemeProvider } from "@/components/theme-provider"
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-  display: "swap",
-})
 
 export const metadata: Metadata = {
   title: "Portafolio | Fotografía & Videografía",
@@ -44,9 +37,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className="scroll-smooth">
-      <body className={`${montserrat.variable} font-sans bg-black text-white min-h-screen flex flex-col`}>
-        <ThemeProvider attribute="class" defaultTheme="dark">
+    <html lang="es" className="scroll-smooth" suppressHydrationWarning>
+      <body className="font-sans bg-black text-white min-h-screen flex flex-col">
+        <ThemeProvider 
+          attribute="class" 
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
           <Navbar />
           <main className="flex-grow">{children}</main>
           <Footer />
